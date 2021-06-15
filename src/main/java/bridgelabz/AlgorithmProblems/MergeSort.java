@@ -10,7 +10,7 @@ package bridgelabz.AlgorithmProblems;
 public class MergeSort<T extends Comparable<T>> {
 
 	/**
-	 * sorting an array of string
+	 * Sorting an array of string
 	 * 
 	 * @param a
 	 * @param from

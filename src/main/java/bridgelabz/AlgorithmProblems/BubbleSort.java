@@ -9,7 +9,7 @@ package bridgelabz.AlgorithmProblems;
 
 public class BubbleSort<T extends Comparable<T>> {
 	/**
-	 * sort the array
+	 * Sort the array
 	 * 
 	 * @param arr of String
 	 */

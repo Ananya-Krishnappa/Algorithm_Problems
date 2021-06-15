@@ -9,9 +9,9 @@ package bridgelabz.AlgorithmProblems;
 
 public class InsertionSort<T extends Comparable<T>> {
 	/**
-	 * This method sorts the array containing string
+	 * This method sorts the array of generic type
 	 * 
-	 * @param arr which contains list of string
+	 * @param arr which contains list of generic type
 	 */
 	public void sort(T[] arr) {
 		int n = arr.length;
