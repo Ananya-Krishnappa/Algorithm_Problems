@@ -7,14 +7,7 @@
  */
 package bridgelabz.AlgorithmProblems;
 
-import java.util.Arrays;
-
-public class MergeSort {
-	public static void main(String[] args) {
-		String[] values = { "foo", "bar", "alice", "bob", "celine", "david" };
-		mergeSort(values, 0, values.length - 1);
-		System.out.println("Result " + Arrays.toString(values));
-	}
+public class MergeSort<T extends Comparable<T>> {
 
 	/**
 	 * sorting an array of string
@@ -23,7 +16,7 @@ public class MergeSort {
 	 * @param from
 	 * @param to
 	 */
-	private static void mergeSort(String[] a, int from, int to) {
+	public void mergeSort(String[] a, int from, int to) {
 		if (from == to) {
 			return;
 		}
@@ -41,7 +34,7 @@ public class MergeSort {
 	 * @param mid
 	 * @param to
 	 */
-	private static void merge(String[] a, int from, int mid, int to) {
+	public void merge(String[] a, int from, int mid, int to) {
 		int n = to - from + 1;
 		String[] b = new String[n];
 		int i1 = from;

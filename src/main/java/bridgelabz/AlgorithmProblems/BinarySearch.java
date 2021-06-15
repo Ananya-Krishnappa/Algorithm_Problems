@@ -7,7 +7,7 @@
  */
 package bridgelabz.AlgorithmProblems;
 
-public class BinarySearch {
+public class BinarySearch<T extends Comparable<T>> {
 
 	/**
 	 * This method search the word from list of words
@@ -16,7 +16,7 @@ public class BinarySearch {
 	 * @param x   the key to be found
 	 * @return
 	 */
-	private static int binarySearch(String[] arr, String x) {
+	public int binarySearch(T[] arr, T x) {
 		int l = 0, r = arr.length - 1;
 		while (l <= r) {
 			int m = l + (r - l) / 2;
@@ -29,16 +29,5 @@ public class BinarySearch {
 				r = m - 1;
 		}
 		return -1;
-	}
-
-	public static void main(String[] args) {
-		String[] arr = { "contribute", "geeks", "ide", "practice" };
-		String x = "ide";
-		int result = binarySearch(arr, x);
-
-		if (result == -1)
-			System.out.println("Element not present");
-		else
-			System.out.println("Element found at " + "index " + result);
 	}
 }
