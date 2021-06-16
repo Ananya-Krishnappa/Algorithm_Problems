@@ -9,6 +9,7 @@
 package bridgelabz.AlgorithmProblems;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -29,6 +30,8 @@ public class PrimeNumberAnagramPalindrome {
 		primeAndPalindrome = primeNumList.stream().filter(prime -> isPalindrome(prime)).collect(Collectors.toList());
 		System.out.println("Prime numbers which are palindrome:");
 		System.out.println(primeAndPalindrome.toString());
+		System.out.println("List of anagrams:");
+		findAllAnagrams(primeNumList);
 	}
 
 	/**
@@ -96,5 +99,43 @@ public class PrimeNumberAnagramPalindrome {
 			num = -num;
 		int dupNum = num;
 		return isPalUtil(num, dupNum);
+	}
+
+	/**
+	 * to find the anagrams the prime number list
+	 * 
+	 * @param primeNumList
+	 * @param n
+	 */
+	private static void findAllAnagrams(List<Integer> primeNumList) {
+		for (int i = 0; i < primeNumList.size(); i++) {
+			for (int j = i + 1; j < primeNumList.size(); j++) {
+				if (areAnagram(primeNumList.get(i).toString().toCharArray(),
+						primeNumList.get(j).toString().toCharArray())) {
+					System.out.println(primeNumList.get(i) + " is anagram of " + primeNumList.get(j));
+				}
+			}
+		}
+	}
+
+	/**
+	 * This method checks if two numbers are anagram.
+	 * 
+	 * @param arr1 first number
+	 * @param arr2 second number
+	 * @return
+	 */
+	public static boolean areAnagram(char[] arr1, char[] arr2) {
+		int n1 = arr1.length;
+		int n2 = arr2.length;
+		if (n1 != n2) {
+			return false;
+		}
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		for (int i = 0; i < n1; i++)
+			if (arr1[i] != arr2[i])
+				return false;
+		return true;
 	}
 }
